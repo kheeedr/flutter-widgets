@@ -5627,7 +5627,7 @@ class _SfDateRangePickerState extends State<_SfDateRangePicker>
 
   @override
   void didChangeDependencies() {
-    _textScaleFactor = MediaQuery.textScalerOf(context).scale(_textScaleFactor);
+    _textScaleFactor = MediaQuery.textScaleFactorOf(context);
     final TextDirection direction = Directionality.of(context);
     // default width value will be device width when the widget placed inside a
     // infinity width widget
@@ -8309,7 +8309,7 @@ class _PickerHeaderPainter extends CustomPainter {
     double xPosition = 0;
     _textPainter.textDirection = TextDirection.ltr;
     _textPainter.textWidthBasis = TextWidthBasis.longestLine;
-    _textPainter.textScaler = TextScaler.linear(textScaleFactor);
+    _textPainter.textScaleFactor =  textScaleFactor;
     _textPainter.maxLines = 1;
 
     _headerText = '';
@@ -8591,7 +8591,7 @@ class _PickerViewHeaderPainter extends CustomPainter {
           style: dayTextStyle,
         );
 
-        _textPainter.textScaler = TextScaler.linear(textScaleFactor);
+        _textPainter.textScaleFactor =  textScaleFactor;
         _textPainter.text = dayTextSpan;
         _textPainter.layout(maxWidth: width);
         yPosition = (viewHeaderHeight - _textPainter.height) / 2;

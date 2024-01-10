@@ -4,6 +4,7 @@ import 'package:intl/intl.dart' show DateFormat;
 import 'package:syncfusion_flutter_core/core.dart';
 import 'package:syncfusion_flutter_core/localizations.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
+
 import '../../datepicker.dart';
 import 'picker_helper.dart';
 
@@ -3896,8 +3897,7 @@ void _drawYearCells(
   }
 
   final dynamic today = DateRangePickerHelper.getToday(yearView.isHijri);
-  yearView._textPainter.textScaler =
-      TextScaler.linear(yearView.textScaleFactor);
+  yearView._textPainter.textScaleFactor = yearView.textScaleFactor;
 
   const double decorationPadding = 1;
   const double selectionPadding = 3;
